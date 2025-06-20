@@ -1,0 +1,252 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#f8fbfa] group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e8f2ec] px-10 py-3">
+          <div class="flex items-center gap-10">
+            <a href="home_page.html" class="flex items-center gap-4 text-[#0e1a13]">
+              <div class="size-4">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6_319)">
+                    <path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+                  </g>
+                  <defs><clipPath id="clip0_6_319"><rect width="48" height="48" fill="white"></rect></clipPath></defs>
+                </svg>
+              </div>
+              <h2 class="text-[#0e1a13] text-lg font-bold leading-tight tracking-[-0.015em]">PetPal</h2>
+            </a>
+            <nav class="flex items-center gap-6">
+              <a href="home_page.html" class="text-green-600 font-semibold text-sm">Home</a>
+              <a href="adoption_page.html" class="text-gray-600 font-medium text-sm hover:text-green-600">Adoption</a>
+              <a href="products_page.html" class="text-gray-600 font-medium text-sm hover:text-green-600">Shop</a>
+              <a href="services_page.html" class="text-gray-600 font-medium text-sm hover:text-green-600">Services</a>
+            </nav>
+          </div>
+          <div class="flex flex-1 justify-end gap-8 items-center">
+            <label class="flex flex-col min-w-40 !h-10 max-w-64">
+              <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+                <div class="text-[#51946c] flex border-none bg-[#e8f2ec] items-center justify-center pl-4 rounded-l-xl border-r-0" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+                </div>
+                <input placeholder="Search" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e1a13] focus:outline-0 focus:ring-0 border-none bg-[#e8f2ec] focus:border-none h-full placeholder:text-[#51946c] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" value=""/>
+              </div>
+            </label>
+            <a href="cart_page.html" id="cart-icon-button" class="relative flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e9f1ec] text-[#101914] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+               <div class="text-[#0e1a13]" data-icon="ShoppingCart" data-size="20px" data-weight="regular">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"></path></svg>
+               </div>
+            </a>
+            <div id="login-button-container" class="flex items-center gap-2"></div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex justify-center">
+              <div class="grid grid-cols-3 gap-3 p-4">
+                <div class="flex flex-col items-center gap-2">
+                  <div class="flex h-full flex-col gap-4 rounded-lg min-w-60">
+                    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/d/1Jwu2tmKLGWjxQ2FR-6DXduX-d9uEE0LI");'></div>
+                    <p class="text-center text-[#0e1a13] text-base font-medium leading-normal">Find your perfect companion</p>
+                  </div>
+                  <a class="flex flex-col items-center justify-center border-b-[3px] border-b-[#38e07b] text-[#0e1a13] gap-1 pb-[7px] pt-2.5 flex-1" href="adoption_page.html">
+                    <div class="text-[#0e1a13]" data-icon="PawPrint" data-size="24px" data-weight="fill">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M240,108a28,28,0,1,1-28-28A28,28,0,0,1,240,108ZM72,108a28,28,0,1,0-28,28A28,28,0,0,0,72,108ZM92,88A28,28,0,1,0,64,60,28,28,0,0,0,92,88Zm72,0a28,28,0,1,0-28-28A28,28,0,0,0,164,88Zm23.12,60.86a35.3,35.3,0,0,1-16.87-21.14,44,44,0,0,0-84.5,0A35.25,35.25,0,0,1,69,148.82,40,40,0,0,0,88,224a39.48,39.48,0,0,0,15.52-3.13,64.09,64.09,0,0,1,48.87,0,40,40,0,0,0,34.73-72Z"></path></svg>
+                    </div>
+                    <p class="text-[#0e1a13] text-sm font-bold leading-normal tracking-[0.015em]">Adoption</p>
+                  </a>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                  <div class="flex h-full flex-col gap-4 rounded-lg min-w-60">
+                    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/d/1bzcHE-0_jL3bwrEnlgcylpmitM46lCOL");'></div>
+                    <p class="text-center text-[#0e1a13] text-base font-medium leading-normal">Shop for your pet's needs</p>
+                  </div>
+                  <a class="flex flex-col items-center justify-center border-b-[3px] border-b-[#38e07b] text-[#0e1a13] gap-1 pb-[7px] pt-2.5 flex-1" href="products_page.html">
+                    <div class="text-[#0e1a13]" data-icon="ShoppingBag" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"></path></svg>
+                    </div>
+                    <p class="text-[#0e1a13] text-sm font-bold leading-normal tracking-[0.015em]">Shop</p>
+                  </a>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                  <div class="flex h-full flex-col gap-4 rounded-lg min-w-60">
+                    <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/d/13HMnCIIVBlFTOTfUWC6cFbPoMo7eoACk");'></div>
+                    <p class="text-center text-[#0e1a13] text-base font-medium leading-normal">Book services for your pet</p>
+                  </div>
+                  <a class="flex flex-col items-center justify-center border-b-[3px] border-b-[#38e07b] text-[#0e1a13] gap-1 pb-[7px] pt-2.5 flex-1" href="services_page.html">
+                    <div class="text-[#0e1a13]" data-icon="Calendar" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"></path></svg>
+                    </div>
+                    <p class="text-[#0e1a13] text-sm font-bold leading-normal tracking-[0.015em]">Services</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div id="no-results-message" class="hidden text-center p-10">
+                <p class="text-gray-600 text-lg font-semibold">Nenhum resultado encontrado.</p>
+                <p class="text-gray-500 text-sm mt-1">Tente buscar por outros termos.</p>
+            </div>
+
+            <h2 id="adoption-showcase-title" class="text-[#0e1a13] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Adoption Showcase</h2>
+            <div class="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <div class="searchable-container flex items-stretch p-4 gap-3">
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBtLnv56BfYCaAWIZs2O-LdUkrir_grGc8byIAC6A6uLBPf09jNLBYRFlT3Tc0csTVmloxRfT9P5XLy6Mytfvz5Vrlrny2aVxway0D6lHTQdFhBGZMk3wZ5_OCrc7KSCQm4mUGTtjEeTlNZOUEYq0AJW2J7WbeHM6qwTZ-OfobS-5mQPV1lZpum7ygwn2ZdC8G_GpkH6qNXA3cerBdAuT1BULStLFrSGycghYLHpqj7RKexP6qCdPptX2HoAzzOxh1BW9xSju96Q_Q" data-title="Buddy" data-description="Golden Retriever" data-subtext="Um companheiro leal e amigável." data-button-text="Adicionar aos Favoritos">
+                  <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtLnv56BfYCaAWIZs2O-LdUkrir_grGc8byIAC6A6uLBPf09jNLBYRFlT3Tc0csTVmloxRfT9P5XLy6Mytfvz5Vrlrny2aVxway0D6lHTQdFhBGZMk3wZ5_OCrc7KSCQm4mUGTtjEeTlNZOUEYq0AJW2J7WbeHM6qwTZ-OfobS-5mQPV1lZpum7ygwn2ZdC8G_GpkH6qNXA3cerBdAuT1BULStLFrSGycghYLHpqj7RKexP6qCdPptX2HoAzzOxh1BW9xSju96Q_Q");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Buddy</p><p class="text-[#51946c] text-sm font-normal leading-normal">Golden Retriever</p></div>
+                </div>
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDZeHrMkoeNf5As-8mOeRmcAgwnLT2wp6bYBAC4JelNx8Xft1zUwBrsCkINWdX_6jIH9p5pIiPJJ0BiQPQ2bbItbcl1YsmHSLIRY5jeeoQpOU43k3Dv2q9EDx1Wcu-1WBV1iT0vFz3NkrWSxF8hAjy_htu-68n7_qx3HHsl6202j9uf6yfiDiPwu1-DqjdagR-2fUIkF5CtS8g8T-rGCCw4Iu8UNtqR7OTmzmK8GBBl5lnjStjlpDPr4PZOC17dSR-FlvL96LJ2IqE" data-title="Snowball" data-description="Siamese Cat" data-subtext="Um gato elegante e carinhoso." data-button-text="Adicionar aos Favoritos">
+                  <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZeHrMkoeNf5As-8mOeRmcAgwnLT2wp6bYBAC4JelNx8Xft1zUwBrsCkINWdX_6jIH9p5pIiPJJ0BiQPQ2bbItbcl1YsmHSLIRY5jeeoQpOU43k3Dv2q9EDx1Wcu-1WBV1iT0vFz3NkrWSxF8hAjy_htu-68n7_qx3HHsl6202j9uf6yfiDiPwu1-DqjdagR-2fUIkF5CtS8g8T-rGCCw4Iu8UNtqR7OTmzmK8GBBl5lnjStjlpDPr4PZOC17dSR-FlvL96LJ2IqE");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Snowball</p><p class="text-[#51946c] text-sm font-normal leading-normal">Siamese Cat</p></div>
+                </div>
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAYV-o8DM3TD29-4Ak9ubQp6uuzsgHLOA-wUQ4kzVjii4wvM2dBp4YJaU0h3JJ2ayzThOK0uRDAo3slv86c9DBrNmLF3NTAoBi9Cka0ZWgXfzTCCV3GHFLceZEzu65uVb5EIaAdsxOHgp1Us7zt7gqok6Xq4PF1T-450yYsikvdVJAwEg-pdNHIZ1tMAABtlE-WX-X6Umm6IfGXdwKkq2LbNzRwJh5HjJNrZ8M_V2JaMnQrukzrtQzXSuIkbs8OR2gHAmZNng0XLuo" data-title="Charlie" data-description="Beagle" data-subtext="Curioso e cheio de energia." data-button-text="Adicionar aos Favoritos">
+                  <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYV-o8DM3TD29-4Ak9ubQp6uuzsgHLOA-wUQ4kzVjii4wvM2dBp4YJaU0h3JJ2ayzThOK0uRDAo3slv86c9DBrNmLF3NTAoBi9Cka0ZWgXfzTCCV3GHFLceZEzu65uVb5EIaAdsxOHgp1Us7zt7gqok6Xq4PF1T-450yYsikvdVJAwEg-pdNHIZ1tMAABtlE-WX-X6Umm6IfGXdwKkq2LbNzRwJh5HjJNrZ8M_V2JaMnQrukzrtQzXSuIkbs8OR2gHAmZNng0XLuo");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Charlie</p><p class="text-[#51946c] text-sm font-normal leading-normal">Beagle</p></div>
+                </div>
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBXi-bYA3kNzUNeBB7A6MouyUU7Zj8qcXn_Qej__0HaeWz0j5melvnbkTZGSfzGV-Mfe74YIPm72ZzF-V13mESSuMNDhLanLgOx3N7hFiQ2bIpQEaVO63Uk55iiEKe-W5D7jKU1JMcWVcrqmvDZgohwQNiTjSJxRi6qQtRsoPobf2n8URv48sxQzsiRvPjHRKK8FZ9S3iBUA-m9c22CS5RboA_fGlsjnKkTd7v61lV9CwithfnV5J3I6C6nT_J4ExoZtUD67X2sawU" data-title="Fluffy" data-description="Persian Cat" data-subtext="Um gato calmo de pelagem exuberante." data-button-text="Adicionar aos Favoritos">
+                  <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBXi-bYA3kNzUNeBB7A6MouyUU7Zj8qcXn_Qej__0HaeWz0j5melvnbkTZGSfzGV-Mfe74YIPm72ZzF-V13mESSuMNDhLanLgOx3N7hFiQ2bIpQEaVO63Uk55iiEKe-W5D7jKU1JMcWVcrqmvDZgohwQNiTjSJxRi6qQtRsoPobf2n8URv48sxQzsiRvPjHRKK8FZ9S3iBUA-m9c22CS5RboA_fGlsjnKkTd7v61lV9CwithfnV5J3I6C6nT_J4ExoZtUD67X2sawU");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Fluffy</p><p class="text-[#51946c] text-sm font-normal leading-normal">Persian Cat</p></div>
+                </div>
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuD89YWMKKyYECzNnpIXpD32TpSkYnIOYzUE-Mx_zEEry6-B-H6lNvEblgkcp3v1BsARlddk3YBUT1G9RALuvpcM2S1ji3-DvSR9fz1lYqEjGFBunbJC7a1qMmS2mCz6Z2lpW7jJv56M5PkBraoO0qLVMH0o4TYgP0Xov6I3ntU7NkHVIpqDL-Mx0IY2jvZyAbu-30ajnmLe9d15JLaPoiUSkADUJcf0xvly6rXh6FUqIDOuULARVMYVHLykeA4hi-IU8V2t0GHZOL0" data-title="Rocky" data-description="Bulldog" data-subtext="Leal e corajoso, um grande amigo." data-button-text="Adicionar aos Favoritos">
+                  <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD89YWMKKyYECzNnpIXpD32TpSkYnIOYzUE-Mx_zEEry6-B-H6lNvEblgkcp3v1BsARlddk3YBUT1G9RALuvpcM2S1ji3-DvSR9fz1lYqEjGFBunbJC7a1qMmS2mCz6Z2lpW7jJv56M5PkBraoO0qLVMH0o4TYgP0Xov6I3ntU7NkHVIpqDL-Mx0IY2jvZyAbu-30ajnmLe9d15JLaPoiUSkADUJcf0xvly6rXh6FUqIDOuULARVMYVHLykeA4hi-IU8V2t0GHZOL0");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Rocky</p><p class="text-[#51946c] text-sm font-normal leading-normal">Bulldog</p></div>
+                </div>
+              </div>
+            </div>
+            <h2 id="store-showcase-title" class="text-[#0e1a13] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Popular in Store</h2>
+            <div class="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <div class="searchable-container flex items-stretch p-4 gap-3">
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCkJFOc7aGdL-s4pGM9vHWFbh24Kt0IZzrCBKz2ReqUcxwdtH9qF2mouEvKfdkNosgw7WFhctoy-39_lstBdlQAt0x9yNi6vhBoN-04dHrXl7zvfQNrca3XTvGUDK8kz873xlxyhclIOipJbc7rVSQty7-yv-jjB4r2Qszv-vABt-lW2BeYPxxW3O8BQ2F-STVB1_Amgy4qRCx28g5gFvSfNvmY6JHZEkf2VvfxHokJ0J0ym_BRiPLZUDcWJ38yqeLRfQgZQoAV8pM" data-title="Premium Dog Food" data-description="Nutritious and delicious" data-subtext="High-quality ingredients" data-price="39.99" data-button-text="Add to Cart">
+                  <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkJFOc7aGdL-s4pGM9vHWFbh24Kt0IZzrCBKz2ReqUcxwdtH9qF2mouEvKfdkNosgw7WFhctoy-39_lstBdlQAt0x9yNi6vhBoN-04dHrXl7zvfQNrca3XTvGUDK8kz873xlxyhclIOipJbc7rVSQty7-yv-jjB4r2Qszv-vABt-lW2BeYPxxW3O8BQ2F-STVB1_Amgy4qRCx28g5gFvSfNvmY6JHZEkf2VvfxHokJ0J0ym_BRiPLZUDcWJ38yqeLRfQgZQoAV8pM");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Premium Dog Food</p><p class="text-[#51946c] text-sm font-normal leading-normal">Nutritious and delicious</p></div>
+                </div>
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDIyRbo18nrwzPeWl0H7qnmKci7EFHC6cJn9_USzf50yazHNlv-nB_jP7SmQQBCS0IHObRZN22nYAHga5i28623xJDeok5eyqusFznfGRG5jKXbCwCP1cr5gDD1mm49JzyJ3ZFzaKbd-gDAooWv-if2FCdTrhyEsWpADbysRMc9psbWjKs2rQLDh9ZVpwl_31dpbFpMOegGz-aRLIbjYYttN9g4ss8MkAKJDbebkrAeJv7pis3hcNvR-PMWvSDXrCUgAmSkFWbFhgA" data-title="Interactive Cat Toy" data-description="Keeps your cat entertained" data-subtext="For hours of fun" data-price="14.99" data-button-text="Add to Cart">
+                  <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDIyRbo18nrwzPeWl0H7qnmKci7EFHC6cJn9_USzf50yazHNlv-nB_jP7SmQQBCS0IHObRZN22nYAHga5i28623xJDeok5eyqusFznfGRG5jKXbCwCP1cr5gDD1mm49JzyJ3ZFzaKbd-gDAooWv-if2FCdTrhyEsWpADbysRMc9psbWjKs2rQLDh9ZVpwl_31dpbFpMOegGz-aRLIbjYYttN9g4ss8MkAKJDbebkrAeJv7pis3hcNvR-PMWvSDXrCUgAmSkFWbFhgA");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Interactive Cat Toy</p><p class="text-[#51946c] text-sm font-normal leading-normal">Keeps your cat entertained</p></div>
+                </div>
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuD86G-833O6mBbIJMygUw9iBeeEeTH0gckTlWiRIFzJi3OT3_IcISbULbs2r5cdk3gzLdpyzpDYe8WghGWsbcSYVECjOlsZBFLUWTCMFP_MO-pW07PGCI84Y-fi53kMuB-H3HMg1evYrS12RpBCI8L3DMU_1ISUUkWRfe4dmxEu68PosGdpRthGY_FPESH_vQh-BPq2M6VL_wltvJz3qq0-MW_aITM9ozLB1_H-v2H31WNqH0DVWiJVUX0Oi7SazBibqwpa3JV_NXU" data-title="Durable Dog Leash" data-description="Strong and reliable" data-subtext="For safe walks" data-price="19.99" data-button-text="Add to Cart">
+                  <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD86G-833O6mBbIJMygUw9iBeeEeTH0gckTlWiRIFzJi3OT3_IcISbULbs2r5cdk3gzLdpyzpDYe8WghGWsbcSYVECjOlsZBFLUWTCMFP_MO-pW07PGCI84Y-fi53kMuB-H3HMg1evYrS12RpBCI8L3DMU_1ISUUkWRfe4dmxEu68PosGdpRthGY_FPESH_vQh-BPq2M6VL_wltvJz3qq0-MW_aITM9ozLB1_H-v2H31WNqH0DVWiJVUX0Oi7SazBibqwpa3JV_NXU");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Durable Dog Leash</p><p class="text-[#51946c] text-sm font-normal leading-normal">Strong and reliable</p></div>
+                </div>
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAHat-ZGi23ABituqJ65ftKlbdGS-lgHPZK5_N_LTMNh8FSb0UmOuPnVJyQihcUSJo9OeMTVfDFtq66ndKgdwpiKPqZv7E-Y4Z7vKGUnfkPmX3A1rzL0OLXkFXaci4ygE5YT5nBOoWMJwY8nOFUgAbIInYm9mK2yq6I-ukv-GYpu1PFP808VXUjd3Y30Jef4m39ki_mXU43vLNmAI5izx9tJHF4gtbJEkbaai11NBe0b0ECJlDzom1Fl58rY1pTqyctX9B3D1kigNQ" data-title="Clumping Cat Litter" data-description="Odor control" data-subtext="Easy to clean" data-price="22.00" data-button-text="Add to Cart">
+                  <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHat-ZGi23ABituqJ65ftKlbdGS-lgHPZK5_N_LTMNh8FSb0UmOuPnVJyQihcUSJo9OeMTVfDFtq66ndKgdwpiKPqZv7E-Y4Z7vKGUnfkPmX3A1rzL0OLXkFXaci4ygE5YT5nBOoWMJwY8nOFUgAbIInYm9mK2yq6I-ukv-GYpu1PFP808VXUjd3Y30Jef4m39ki_mXU43vLNmAI5izx9tJHF4gtbJEkbaai11NBe0b0ECJlDzom1Fl58rY1pTqyctX9B3D1kigNQ");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Clumping Cat Litter</p><p class="text-[#51946c] text-sm font-normal leading-normal">Odor control</p></div>
+                </div>
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCMVzAv-3LJlZfzKNsNHhZS9zY4Nlld3I2LbdcLt9prP1nYAb18jTKtM2X9beEDa-HM_vnXLdrliGIR-xt1qkPo4IMNXQ00B2HM6pkkA2DId0GwesckCGrZojccQEktxrG_37P_3YqK7CnPgIbORxCCVACOAmqkhB0Ed7yzmOQ1-5q8z3TcnRcYOcYaPXMk9mGQYlm28pkHXjwyvZXtsijR4Q3PjgTWdf0ZlDeLfGD8WNyzUtnpcK2FjGo3q-04-c2AkLUsh9nDZJ8" data-title="Gentle Dog Shampoo" data-description="For a shiny coat" data-subtext="Tear-free formula" data-price="18.99" data-button-text="Add to Cart">
+                  <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMVzAv-3LJlZfzKNsNHhZS9zY4Nlld3I2LbdcLt9prP1nYAb18jTKtM2X9beEDa-HM_vnXLdrliGIR-xt1qkPo4IMNXQ00B2HM6pkkA2DId0GwesckCGrZojccQEktxrG_37P_3YqK7CnPgIbORxCCVACOAmqkhB0Ed7yzmOQ1-5q8z3TcnRcYOcYaPXMk9mGQYlm28pkHXjwyvZXtsijR4Q3PjgTWdf0ZlDeLfGD8WNyzUtnpcK2FjGo3q-04-c2AkLUsh9nDZJ8");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Gentle Dog Shampoo</p><p class="text-[#51946c] text-sm font-normal leading-normal">For a shiny coat</p></div>
+                </div>
+              </div>
+            </div>
+            <h2 id="services-showcase-title" class="text-[#0e1a13] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Featured Services</h2>
+            <div class="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <div class="searchable-container flex items-stretch p-4 gap-3">
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAA1VTVc3yMbM3JYbn4KyGI3xPr2GksLMXT-hhG_6S4We1KunuYbe_e77q43rg4LyTNKgFiqQulVinKh7vrDBildRWA9DJvfIS6GUgD1ACd6R1E31V_To96rZDnP6oyJKIzMJfWqRATigkO4Jp6ZtOjqFwveRYj-n3W_dnh9CwIebReoZ_vC-WZgFOQGP_hjV9n3jxcnLBUpe8C5_cUuSPHSCdn5Fkim5ME4pbfSRCr_RbM_NOwfuebJbxlAR0RbzTBZb0qqGEskks" data-title="Professional Grooming" data-description="A full-service grooming session." data-subtext="Starting at $49.99" data-price="49.99" data-button-text="Book Now">
+                  <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAA1VTVc3yMbM3JYbn4KyGI3xPr2GksLMXT-hhG_6S4We1KunuYbe_e77q43rg4LyTNKgFiqQulVinKh7vrDBildRWA9DJvfIS6GUgD1ACd6R1E31V_To96rZDnP6oyJKIzMJfWqRATigkO4Jp6ZtOjqFwveRYj-n3W_dnh9CwIebReoZ_vC-WZgFOQGP_hjV9n3jxcnLBUpe8C5_cUuSPHSCdn5Fkim5ME4pbfSRCr_RbM_NOwfuebJbxlAR0RbzTBZb0qqGEskks");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Professional Grooming</p><p class="text-[#51946c] text-sm font-normal leading-normal">Starting at $49.99</p></div>
+                </div>
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBXOqXqUY8fE1UvPyD0PYvBKRskoQpDUadapkvoz0GbXtjgRJ3SXLYSPu3KdK4pQS-Kyw-ClRGx3EVHO3kyIbE5ronu2Iy6L725msp52rRv0CVv2Lx94EwLO_j2pgTG0dZ5vbhphVC7C9BQ4x1umR1rbBXUrcfH2noPPaNKvN-FPzTpwiK5rPcZK-XjeXynEHOHUnwny1my9wRn_M4ubL8MgV0X5vhEd_un4rYL1QLqW5CHxRWFFytivRvV6XVjC7LreQXJOq1VbTQ" data-title="Obedience Training" data-description="Basic obedience classes for your pet." data-subtext="Starting at $79.99" data-price="79.99" data-button-text="Book Now">
+                  <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBXOqXqUY8fE1UvPyD0PYvBKRskoQpDUadapkvoz0GbXtjgRJ3SXLYSPu3KdK4pQS-Kyw-ClRGx3EVHO3kyIbE5ronu2Iy6L725msp52rRv0CVv2Lx94EwLO_j2pgTG0dZ5vbhphVC7C9BQ4x1umR1rbBXUrcfH2noPPaNKvN-FPzTpwiK5rPcZK-XjeXynEHOHUnwny1my9wRn_M4ubL8MgV0X5vhEd_un4rYL1QLqW5CHxRWFFytivRvV6XVjC7LreQXJOq1VbTQ");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Obedience Training</p><p class="text-[#51946c] text-sm font-normal leading-normal">Starting at $79.99</p></div>
+                </div>
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDKlJIXl7tBJuc2Du08phFnuiu7o07BbwQfRTvNfgisr2ucczND4kfCW16J8Ga84cf1tgta2srzxuN7NYqbbSLwzqURAo9PH8Bv17Yd8e974mxODUHECzzfFFCEa5kzAJULndJ1Y6zaBLPC1qOMDgYFcLp7V2O3pTDPTgguefyf52UiR6wJ7hc1nZB8SMM5ktbkztOuGknFKvNRfeKmtkEjdmewChrcnqKr9zC6fQvrUr3tfqa_fwqIBNxTxgLR3xU2deXLmy6Edfs" data-title="Veterinary Checkup" data-description="Comprehensive health checkup." data-subtext="Starting at $99.99" data-price="99.99" data-button-text="Book Now">
+                  <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKlJIXl7tBJuc2Du08phFnuiu7o07BbwQfRTvNfgisr2ucczND4kfCW16J8Ga84cf1tgta2srzxuN7NYqbbSLwzqURAo9PH8Bv17Yd8e974mxODUHECzzfFFCEa5kzAJULndJ1Y6zaBLPC1qOMDgYFcLp7V2O3pTDPTgguefyf52UiR6wJ7hc1nZB8SMM5ktbkztOuGknFKvNRfeKmtkEjdmewChrcnqKr9zC6fQvrUr3tfqa_fwqIBNxTxgLR3xU2deXLmy6Edfs");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Veterinary Checkup</p><p class="text-[#51946c] text-sm font-normal leading-normal">Starting at $99.99</p></div>
+                </div>
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBMU7HSJ0d_oU4sPKU06PYNMt1AiwC6hRKCNO1OvH8szgtqtHK6whKCStLnN7hQhM_Jw-UgP6c-BjX_ol64_lwRVswxA6WhbXGcZF9oX_zhWELc0qd1ofN-z18TiG_-lwiVCbtwyVu3r3hTRVTT8tPnyZr6uZNP7K2os2B_0cHSPL0QaNc5UD4MMLGA2sF22SAAECsiOyNe9n8Tgn_j0pD3tAVA46HVNa8D8pHXfl7foJvbzSJsODp3miyE8bTTtdOJWQDmtadLQMg" data-title="Pet Sitting" data-description="Reliable pet sitting services." data-subtext="Starting at $29.99" data-price="29.99" data-button-text="Book Now">
+                  <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMU7HSJ0d_oU4sPKU06PYNMt1AiwC6hRKCNO1OvH8szgtqtHK6whKCStLnN7hQhM_Jw-UgP6c-BjX_ol64_lwRVswxA6WhbXGcZF9oX_zhWELc0qd1ofN-z18TiG_-lwiVCbtwyVu3r3hTRVTT8tPnyZr6uZNP7K2os2B_0cHSPL0QaNc5UD4MMLGA2sF22SAAECsiOyNe9n8Tgn_j0pD3tAVA46HVNa8D8pHXfl7foJvbzSJsODp3miyE8bTTtdOJWQDmtadLQMg");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Pet Sitting</p><p class="text-[#51946c] text-sm font-normal leading-normal">Starting at $29.99</p></div>
+                </div>
+                <div class="item-card flex h-full flex-1 flex-col gap-4 rounded-xl min-w-40 cursor-pointer transition-all hover:shadow-lg" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAGusuARYab96cnewMu9efrh6oZKf8eelFW9nMsbSvMk3hx2e_fIVfhwkHuY4xAi4A-0-n76UcR8JPewN_ssY78rgwR82tw7C-GvyIVL6xeCLO6Wk1B1dcU6Lo7dmpERNe_JEcYo5647saYn0PM1s1WzNzHhBUOkJPgf_dMqanNmUKypvleyl7jo1Q0COdWtdam-cfzx7QHxgoY3Ra-XZO3V0iug1MMwc5jTphn33HteJX0WsX3ahsq-QVgRNWCzW7-FEIbC4Dttqk" data-title="Dog Walking" data-description="Keep your pet active and happy." data-subtext="Starting at $19.99" data-price="19.99" data-button-text="Book Now">
+                  <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAGusuARYab96cnewMu9efrh6oZKf8eelFW9nMsbSvMk3hx2e_fIVfhwkHuY4xAi4A-0-n76UcR8JPewN_ssY78rgwR82tw7C-GvyIVL6xeCLO6Wk1B1dcU6Lo7dmpERNe_JEcYo5647saYn0PM1s1WzNzHhBUOkJPgf_dMqanNmUKypvleyl7jo1Q0COdWtdam-cfzx7QHxgoY3Ra-XZO3V0iug1MMwc5jTphn33HteJX0WsX3ahsq-QVgRNWCzW7-FEIbC4Dttqk");'></div>
+                  <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Dog Walking</p><p class="text-[#51946c] text-sm font-normal leading-normal">Starting at $19.99</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="bg-gray-800 text-white">
+            <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-10">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider">Navegação</h3>
+                        <ul class="space-y-2">
+                            <li><a href="products_page.html" class="text-base text-gray-300 hover:text-white">Loja</a></li>
+                            <li><a href="services_page.html" class="text-base text-gray-300 hover:text-white">Serviços</a></li>
+                            <li><a href="adoption_page.html" class="text-base text-gray-300 hover:text-white">Adoção</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider">Suporte</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">Preços</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">Fale Conosco</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider">Empresa</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">Sobre</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">Blog</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">Carreiras</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider">Legal</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">Privacidade</a></li>
+                            <li><a href="#" class="text-base text-gray-300 hover:text-white">Termos</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 border-t border-gray-700 pt-8 flex items-center justify-between">
+                    <p class="text-base text-gray-400">© 2025 PetPal. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+      </div>
+
+    <div id="details-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-30">
+        <div id="modal-overlay" class="relative top-20 mx-auto p-5 border w-11/12 md:w-2/3 lg:w-1/2 shadow-lg rounded-md bg-white">
+            <div class="flex justify-end">
+                <button id="close-modal-btn" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            <div class="mt-3 text-center">
+                <div id="modal-image" class="mx-auto w-fit h-80 bg-center bg-no-repeat aspect-square bg-cover rounded-xl"></div>
+                <h3 id="modal-title" class="text-2xl leading-6 font-medium text-gray-900 mt-4"></h3>
+                <div class="mt-2 px-7 py-3">
+                    <p id="modal-description" class="text-lg text-gray-700"></p>
+                    <p id="modal-subtext" class="text-sm text-gray-500 mt-2"></p>
+                </div>
+                <div class="items-center px-4 py-3">
+                    <button id="modal-action-button" class="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"></button>
+                    <div id="modal-confirmation" class="hidden text-center py-3">
+                        <p class="text-green-600 font-semibold"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="search.js" defer></script>
+    <script src="auth.js" defer></script>
+    <script src="modal.js" defer></script>
+    <script src="cart.js" defer></script>
+  </body>
+</html>

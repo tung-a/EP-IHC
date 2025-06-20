@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+    <title>Minha Conta - PetPal</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#f9fbfa] group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e9f1ec] px-10 py-3">
+          <div class="flex items-center gap-10">
+            <a href="home_page.html" class="flex items-center gap-4 text-[#101914]">
+              <div class="size-4">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_6_319)"><path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path></g><defs><clipPath id="clip0_6_319"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+              </div>
+              <h2 class="text-[#101914] text-lg font-bold leading-tight tracking-[-0.015em]">PetPal</h2>
+            </a>
+            <nav class="flex items-center gap-6">
+              <a href="home_page.html" class="text-gray-600 font-medium text-sm hover:text-green-600">Home</a>
+              <a href="adoption_page.html" class="text-gray-600 font-medium text-sm hover:text-green-600">Adoption</a>
+              <a href="products_page.html" class="text-gray-600 font-medium text-sm hover:text-green-600">Shop</a>
+              <a href="services_page.html" class="text-gray-600 font-medium text-sm hover:text-green-600">Services</a>
+            </nav>
+          </div>
+          <div class="flex flex-1 justify-end gap-8 items-center">
+            <a href="cart_page.html" id="cart-icon-button" class="relative flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e9f1ec] text-[#101914] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+               <div class="text-[#101914]" data-icon="ShoppingCart" data-size="20px" data-weight="regular">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"></path></svg>
+               </div>
+            </a>
+            <div id="login-button-container" class="flex items-center gap-2"></div>
+          </div>
+        </header>
+        
+        <div class="px-10 lg:px-40 flex flex-1 justify-center py-10">
+          <div class="layout-content-container flex flex-col w-full flex-1">
+            <div class="flex flex-col lg:flex-row gap-8">
+
+                <div class="lg:w-1/4">
+                    <div class="p-6 bg-white rounded-lg shadow-md">
+                        <div class="flex items-center gap-4 border-b pb-4">
+                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-16" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmDKxRrWbweQy2ts30XwT_YS4xrzaVZpQeno4ZTM3BYEpul0vA9yQZvYvEnXVNFlNUtPFK1AEIJlh9KjkIEL5v121ZPu7NZjWUfThuu7Ft4GsVgWcmUuLg8_EvHYGx8yHQrc9srDl81eeQ4j1Tac2LcKGMfgsFQm3u2ByBjQtvvgiEj7qRPbac-E4wpF95aE2vm2N3uSnV9G9iiV7tZD-afP6pftqpvY_yL4oOq1v7jKeawCPwSLd0pSBCATwc8lfoT6__TqopHnU");'></div>
+                            <div>
+                                <p class="font-bold text-lg">Meu Perfil</p>
+                                <p class="text-sm text-gray-500">teste@petpal.com</p>
+                            </div>
+                        </div>
+                        <nav class="mt-4 flex flex-col gap-2">
+                            <a href="favorites_page.html" class="px-4 py-2 text-gray-700 rounded-md hover:bg-green-100 hover:text-green-700">Meus Favoritos</a>
+                            <a href="bookings_page.html" class="px-4 py-2 text-gray-700 rounded-md hover:bg-green-100 hover:text-green-700">Meus Agendamentos</a>
+                            <a href="cart_page.html" class="px-4 py-2 text-gray-700 rounded-md hover:bg-green-100 hover:text-green-700">Meu Carrinho</a>
+                            <a href="order_history.html" class="px-4 py-2 text-gray-700 rounded-md hover:bg-green-100 hover:text-green-700">Histórico de Compras</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="lg:w-3/4">
+                    <div class="p-8 bg-white rounded-lg shadow-md">
+                        <h2 class="text-2xl font-bold text-[#101914]">Detalhes da Conta</h2>
+                        <p class="text-gray-600 mt-1 mb-6">Gerencie suas informações pessoais e de segurança.</p>
+                        
+                        <form id="account-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Nome</label>
+                                <input type="text" id="name" value="Usuário Teste" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                            </div>
+                             <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
+                                <input type="email" id="email" value="teste@petpal.com" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-gray-100 cursor-not-allowed" readonly>
+                            </div>
+                             <div>
+                                <label for="password" class="block text-sm font-medium text-gray-700">Alterar Senha</label>
+                                <input type="password" id="password" placeholder="Nova senha" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                            </div>
+                            
+                            <div class="border-t pt-6 mt-6">
+                                <h3 class="text-lg font-medium leading-6 text-gray-900">Endereço de Entrega</h3>
+                                <div class="mt-4 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+                                    <div class="sm:col-span-2">
+                                        <label for="cep" class="block text-sm font-medium text-gray-700">CEP</label>
+                                        <input type="text" id="cep" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                                    </div>
+                                    <div class="sm:col-span-4">
+                                        <label for="address" class="block text-sm font-medium text-gray-700">Endereço</label>
+                                        <input type="text" id="address" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                                    </div>
+                                    <div class="sm:col-span-2">
+                                        <label for="number" class="block text-sm font-medium text-gray-700">Número</label>
+                                        <input type="text" id="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                                    </div>
+                                    <div class="sm:col-span-4">
+                                        <label for="complement" class="block text-sm font-medium text-gray-700">Complemento (Opcional)</label>
+                                        <input type="text" id="complement" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                                    </div>
+                                    <div class="sm:col-span-6">
+                                        <label for="neighborhood" class="block text-sm font-medium text-gray-700">Bairro</label>
+                                        <input type="text" id="neighborhood" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                                    </div>
+                                    <div class="sm:col-span-4">
+                                        <label for="city" class="block text-sm font-medium text-gray-700">Cidade</label>
+                                        <input type="text" id="city" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                                    </div>
+                                    <div class="sm:col-span-2">
+                                        <label for="state" class="block text-sm font-medium text-gray-700">Estado</label>
+                                        <input type="text" id="state" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-6 border-t">
+                                <button id="save-changes-btn" type="submit" class="px-6 py-2 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-all duration-300">
+                                    Salvar Alterações
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="auth.js" defer></script>
+    <script src="cart.js" defer></script>
+    <script src="my_account.js" defer></script>
+  </body>
+</html>
