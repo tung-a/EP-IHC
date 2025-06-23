@@ -10,6 +10,8 @@
     <title>Meus Favoritos - PetPal</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Link para o ficheiro CSS aprimorado -->
     <link rel="stylesheet" href="css/custom.css">
   </head>
   <body>
@@ -47,11 +49,12 @@
             </div>
             
             <div id="favorites-grid" class="grid grid-cols-[repeat(auto-fill,minmax(158px,1fr))] gap-3 p-4">
-              </div>
+              <!-- Os cards de favoritos serão renderizados aqui pelo favorites.js -->
+            </div>
 
             <div id="empty-favorites-message" class="hidden text-center p-10">
-                <p class="text-gray-600 text-lg">Você ainda não adicionou nenhum pet aos seus favoritos.</p>
-                <a href="adoption_page.html" class="mt-4 inline-block px-6 py-2 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600">Ver Pets para Adoção</a>
+                <p class="text-gray-600 text-lg">Ainda não adicionou nenhum animal aos seus favoritos.</p>
+                <a href="adoption_page.html" class="mt-4 inline-block px-6 py-2 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600">Ver Animais para Adoção</a>
             </div>
 
           </div>

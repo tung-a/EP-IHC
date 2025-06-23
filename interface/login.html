@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,23 +12,26 @@
       href="https://fonts.googleapis.com/css2?display=swap&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
     />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Link para o ficheiro CSS aprimorado -->
     <link rel="stylesheet" href="css/custom.css">
+
     <script>
-      // Se o usuário já estiver logado, redireciona para a home
+      // Se o utilizador já estiver logado, redireciona para a home
       if (localStorage.getItem('isLoggedIn') === 'true') {
         window.location.href = 'home_page.html';
       }
     </script>
 </head>
 <body class="bg-[#f8fbfa]" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
-    <div class="flex min-h-screen flex-col items-center justify-center">
+    <div class="flex min-h-screen flex-col items-center justify-center p-4">
         <div class="w-full max-w-sm p-8 space-y-8 bg-white rounded-2xl shadow-lg">
-            <div class="flex items-center justify-center gap-4 text-[#0e1a13]">
+            <a href="home_page.html" class="flex items-center justify-center gap-4 text-[#0e1a13]">
                 <div class="size-6">
                   <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_6_319)"><path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path></g><defs><clipPath id="clip0_6_319"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
                 </div>
                 <h2 class="text-[#0e1a13] text-2xl font-bold leading-tight tracking-[-0.015em]">PetPal</h2>
-            </div>
+            </a>
 
             <form id="login-form" class="mt-8 space-y-6">
                 <div>
@@ -39,7 +42,7 @@
                 </div>
 
                 <div>
-                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Palavra-passe</label>
                     <div class="mt-1">
                         <input id="password" name="password" type="password" autocomplete="current-password" required class="form-input block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm" value="ihc2023">
                     </div>
@@ -48,14 +51,16 @@
                 <p id="error-message" class="text-sm text-red-600 text-center" style="display: none;"></p>
 
                 <div>
-                    <button type="submit" class="group relative flex w-full justify-center rounded-md border border-transparent bg-green-500 py-2 px-4 text-sm font-medium text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
-                        Sign in
+                    <button type="submit" class="group relative flex w-full justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-white transition-colors">
+                        Entrar
                     </button>
                 </div>
-                 <p class="text-xs text-gray-500 text-center">Use <span class="font-semibold">teste@petpal.com</span> e <span class="font-semibold">ihc2023</span> para logar.</p>
+                 <p class="text-xs text-gray-500 text-center">Use <span class="font-semibold">teste@petpal.com</span> e <span class="font-semibold">ihc2023</span> para entrar.</p>
             </form>
         </div>
     </div>
+    
+    <!-- Link para o ficheiro JS aprimorado -->
     <script src="scripts/auth.js" defer></script>
 </body>
 </html>

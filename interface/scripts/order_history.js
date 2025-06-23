@@ -1,24 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
     const historyContainer = document.getElementById('order-history-container');
     const emptyMessage = document.getElementById('empty-history-message');
-    const clearHistoryBtn = document.getElementById('clear-history-btn'); // Novo botão
+    const clearHistoryBtn = document.getElementById('clear-history-btn');
 
     const renderHistory = () => {
         const orderHistory = JSON.parse(localStorage.getItem('petPalOrderHistory')) || [];
 
+        // Limpa sempre a vista antes de renderizar
+        historyContainer.innerHTML = ''; 
+
         if (orderHistory.length === 0) {
             emptyMessage.classList.remove('hidden');
             historyContainer.classList.add('hidden');
-            clearHistoryBtn.classList.add('hidden'); // Esconde o botão se não houver histórico
+            if (clearHistoryBtn) clearHistoryBtn.classList.add('hidden');
         } else {
             emptyMessage.classList.add('hidden');
             historyContainer.classList.remove('hidden');
-            clearHistoryBtn.classList.remove('hidden'); // Mostra o botão se houver histórico
-            historyContainer.innerHTML = '';
+            if (clearHistoryBtn) clearHistoryBtn.classList.remove('hidden');
 
             orderHistory.forEach(order => {
                 const orderCard = document.createElement('div');
-                orderCard.className = 'bg-white p-6 rounded-lg shadow-md border';
+                // Adicionamos uma classe específica para os cards de pedido
+                orderCard.className = 'order-card bg-white p-6 rounded-lg shadow-md border';
 
                 let itemsHtml = order.items.map(item => `
                     <div class="flex items-center gap-4 py-2 border-b last:border-b-0">
@@ -48,18 +51,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- NOVA LÓGICA PARA O BOTÃO DE LIMPAR ---
+    // --- [NOVA LÓGICA] Limpar histórico com animação ---
     if (clearHistoryBtn) {
         clearHistoryBtn.addEventListener('click', () => {
-            // Pede confirmação ao usuário antes de apagar
-            if (confirm('Tem certeza que deseja limpar todo o histórico de compras? Esta ação não pode ser desfeita.')) {
-                // Remove o item do localStorage
-                localStorage.removeItem('petPalOrderHistory');
-                // Re-renderiza a página para mostrar o estado vazio
-                renderHistory();
+            const cards = document.querySelectorAll('.order-card');
+            
+            if (cards.length > 0) {
+                // Adiciona a classe de animação a todos os cards
+                cards.forEach(card => {
+                    card.classList.add('removing');
+                });
+
+                // Espera a animação terminar (400ms) antes de limpar os dados
+                setTimeout(() => {
+                    localStorage.removeItem('petPalOrderHistory');
+                    // Re-renderiza a página para mostrar o estado vazio
+                    renderHistory();
+                }, 400); 
             }
         });
     }
 
+    // Renderização inicial ao carregar a página
     renderHistory();
 });

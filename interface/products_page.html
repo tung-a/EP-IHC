@@ -10,6 +10,8 @@
     <title>PetPal - Shop</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Links para os arquivos externos CSS e JS -->
     <link rel="stylesheet" href="css/custom.css">
     <style>.filter-dropdown { z-index: 10; }</style>
   </head>
@@ -61,7 +63,7 @@
                   <p class="filter-label text-[#0e1a13] text-sm font-medium leading-normal" data-original-text="Category">Category</p>
                   <div class="text-[#0e1a13]" data-icon="CaretDown" data-size="20px"><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></div>
                 </button>
-                <div id="category-dropdown" class="filter-dropdown hidden absolute top-10 left-0 bg-white border rounded-lg shadow-lg w-48">
+                <div id="category-dropdown" class="filter-dropdown absolute top-10 left-0 bg-white border rounded-lg shadow-lg w-48">
                   <a href="#" class="filter-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-filter-type="category" data-filter-value="bed">Beds & Furniture</a>
                   <a href="#" class="filter-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-filter-type="category" data-filter-value="toy">Toys</a>
                   <a href="#" class="filter-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-filter-type="category" data-filter-value="leash">Leashes & Collars</a>
@@ -77,7 +79,7 @@
                   <p class="filter-label text-[#0e1a13] text-sm font-medium leading-normal" data-original-text="Price">Price</p>
                   <div class="text-[#0e1a13]" data-icon="CaretDown" data-size="20px"><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></div>
                 </button>
-                <div id="price-dropdown" class="filter-dropdown hidden absolute top-10 left-0 bg-white border rounded-lg shadow-lg w-40">
+                <div id="price-dropdown" class="filter-dropdown absolute top-10 left-0 bg-white border rounded-lg shadow-lg w-40">
                   <a href="#" class="filter-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-filter-type="price" data-filter-value="0-20">$0 - $20</a>
                   <a href="#" class="filter-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-filter-type="price" data-filter-value="20-40">$20 - $40</a>
                   <a href="#" class="filter-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-filter-type="price" data-filter-value="40-100">$40+</a>
@@ -87,7 +89,8 @@
               </div>
             </div>
             <div id="item-grid" class="grid grid-cols-[repeat(auto-fill,minmax(158px,1fr))] gap-3 p-4">
-              <div class="item-card flex flex-col gap-3 pb-3 cursor-pointer rounded-xl" data-category="bed" data-brand="petparadise" data-price="29.99" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuC_4SgUR-C7vLWU_FJ0EOXXhC4X-QZdKGFVBG2jxo74MXOhkEhhN_XYnObLZeR73dE6M_UlupqS8LbOBEy38gvKw_jPEsKDzh6heo2-awciPT6Paegy-ksbIYeLfbFqXpnXwLu-h-0ROYQQuTYq2zYGr3i2754YPm9lJX8NHBOQaKAD2REJhD9bNZVNuB4OE948lJ1G2Tui9z3kKFGRAcHCVfBLd1P2Foo-wr28IZLG9XK88BBkzTlO9UkGVwD-2Qi_IdWWieB691g" data-title="Cozy Pet Bed" data-description="A comfortable and warm bed for your pet, perfect for a good night's sleep." data-subtext="$29.99" data-button-text="Add to Cart">
+              <!-- [NOVA] Classe 'featured-item-card' adicionada aqui -->
+              <div class="item-card featured-item-card flex flex-col gap-3 pb-3 cursor-pointer rounded-xl" data-category="bed" data-brand="petparadise" data-price="29.99" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuC_4SgUR-C7vLWU_FJ0EOXXhC4X-QZdKGFVBG2jxo74MXOhkEhhN_XYnObLZeR73dE6M_UlupqS8LbOBEy38gvKw_jPEsKDzh6heo2-awciPT6Paegy-ksbIYeLfbFqXpnXwLu-h-0ROYQQuTYq2zYGr3i2754YPm9lJX8NHBOQaKAD2REJhD9bNZVNuB4OE948lJ1G2Tui9z3kKFGRAcHCVfBLd1P2Foo-wr28IZLG9XK88BBkzTlO9UkGVwD-2Qi_IdWWieB691g" data-title="Cozy Pet Bed" data-description="A comfortable and warm bed for your pet, perfect for a good night's sleep." data-subtext="$29.99" data-button-text="Add to Cart">
                 <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_4SgUR-C7vLWU_FJ0EOXXhC4X-QZdKGFVBG2jxo74MXOhkEhhN_XYnObLZeR73dE6M_UlupqS8LbOBEy38gvKw_jPEsKDzh6heo2-awciPT6Paegy-ksbIYeLfbFqXpnXwLu-h-0ROYQQuTYq2zYGr3i2754YPm9lJX8NHBOQaKAD2REJhD9bNZVNuB4OE948lJ1G2Tui9z3kKFGRAcHCVfBLd1P2Foo-wr28IZLG9XK88BBkzTlO9UkGVwD-2Qi_IdWWieB691g");'></div>
                 <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Cozy Pet Bed</p><p class="text-[#51946c] text-sm font-normal leading-normal">$29.99</p></div>
               </div>
@@ -95,6 +98,7 @@
                 <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBP7YRQGhLa1ZnzkD0pE2-tRODDlopdXLTVgoWG0LeOLaXLCtjm2wpiUU7r1sZBKh7AlsF7Nw20bJwQNVPJ-Cfp-9tr7CrQCmw2F5-6jkQppyMvHWtZJPcFyCA_RuXRf5mKgLdox61gxmp1TQ5LxckdKhA1mSd2K5gXyZB2k1jaKA3eutF5if6fpgJdGEKb6lLpIPqVdGWoBU7WFF8c9BBkE2F8rY5dMRzYf6tOFmKJFOztw9_gxU1F_0g7JNh-BWZoB38OB8c5ANI");'></div>
                 <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Interactive Cat Toy</p><p class="text-[#51946c] text-sm font-normal leading-normal">$14.99</p></div>
               </div>
+              <!-- Restante dos cards de produto... -->
               <div class="item-card flex flex-col gap-3 pb-3 cursor-pointer rounded-xl" data-category="leash" data-brand="petstrong" data-price="19.99" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuB4eUICEPpHEfbzfSPrvqkbOE8-XXdqdymF0F8ttZhFhcIDc4GUgKteApvw3NqeiLrua9t1F4Zox2ThKYTHOjqftb9ZU8b0uKqWqKVIN78DsUTNRinCDPW9z6Vfpk5ni_kjOdcGNLM_Ii8TT14ZbyDy8dmafOjvZDjx8cuUcSdjp0A7HSi2Aq1X1Exd8V5clAyMYpulbeD7iFa6M1ZOaUxYIJmv0JtiqJMT9gVAA55cZmEwmReIYyj1DWynb4RGteRSeARECnpax2E" data-title="Durable Dog Leash" data-description="Strong, reliable, and comfortable to hold during walks." data-subtext="$19.99" data-button-text="Add to Cart">
                 <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4eUICEPpHEfbzfSPrvqkbOE8-XXdqdymF0F8ttZhFhcIDc4GUgKteApvw3NqeiLrua9t1F4Zox2ThKYTHOjqftb9ZU8b0uKqWqKVIN78DsUTNRinCDPW9z6Vfpk5ni_kjOdcGNLM_Ii8TT14ZbyDy8dmafOjvZDjx8cuUcSdjp0A7HSi2Aq1X1Exd8V5clAyMYpulbeD7iFa6M1ZOaUxYIJmv0JtiqJMT9gVAA55cZmEwmReIYyj1DWynb4RGteRSeARECnpax2E");'></div>
                 <div><p class="text-[#0e1a13] text-base font-medium leading-normal">Durable Dog Leash</p><p class="text-[#51946c] text-sm font-normal leading-normal">$19.99</p></div>

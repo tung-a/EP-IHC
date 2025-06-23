@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const headerSearchInput = document.querySelector('header input[placeholder="Search"]');
     const searchableContainers = document.querySelectorAll('.searchable-container');
     const noResultsMessage = document.getElementById('no-results-message');
     
-    // Seleciona os títulos das seções
-    const adoptionTitle = document.getElementById('adoption-showcase-title');
-    const storeTitle = document.getElementById('store-showcase-title');
-    const servicesTitle = document.getElementById('services-showcase-title');
+    // Seleciona todos os títulos das secções de forma mais robusta
+    const sectionTitles = document.querySelectorAll('.section-title');
 
     const filterContent = () => {
         if (!headerSearchInput || searchableContainers.length === 0) return;
         
-        const query = headerSearchInput.value.toLowerCase();
+        const query = headerSearchInput.value.toLowerCase().trim();
         let totalVisibleItems = 0;
 
+        // Itera sobre cada container de carrossel/secção
         searchableContainers.forEach(container => {
             let visibleItemsInSection = 0;
+            // Itera sobre cada item (card) dentro do container
             for (const item of container.children) {
-                if (item.nodeType === 1) {
+                // Garante que estamos a trabalhar com um elemento (ignora nós de texto)
+                if (item.nodeType === 1) { 
                     const itemText = item.textContent.toLowerCase();
                     if (itemText.includes(query)) {
                         item.style.display = '';
@@ -30,22 +30,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             totalVisibleItems += visibleItemsInSection;
 
-            // Esconde o título da seção se não houver itens visíveis nela
-            const sectionTitle = container.parentElement.previousElementSibling;
-            if (sectionTitle && sectionTitle.tagName === 'H2') {
-                 if(visibleItemsInSection > 0) {
-                    sectionTitle.style.display = '';
+            // Encontra o título associado a este container e controla a sua visibilidade
+            const sectionId = container.getAttribute('data-section-id');
+            const associatedTitle = document.getElementById(sectionId);
+            
+            if (associatedTitle) {
+                 if (visibleItemsInSection > 0) {
+                    associatedTitle.style.display = '';
                 } else {
-                    sectionTitle.style.display = 'none';
+                    associatedTitle.style.display = 'none';
                 }
             }
         });
         
         // Controla a visibilidade da mensagem "Nenhum resultado encontrado"
         if (totalVisibleItems === 0 && query !== '') {
-            if(noResultsMessage) noResultsMessage.classList.remove('hidden');
+            if (noResultsMessage) noResultsMessage.classList.remove('hidden');
         } else {
-            if(noResultsMessage) noResultsMessage.classList.add('hidden');
+            if (noResultsMessage) noResultsMessage.classList.add('hidden');
         }
     };
 

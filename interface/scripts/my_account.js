@@ -1,7 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     const accountForm = document.getElementById('account-form');
     const saveButton = document.getElementById('save-changes-btn');
+    const accountNav = document.getElementById('account-nav');
 
+    // --- [NOVA LÓGICA] Destaque do Link de Navegação Ativo ---
+    if (accountNav) {
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = accountNav.querySelectorAll('a');
+
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href').split('/').pop();
+            // Adiciona a classe 'active-nav-link' se o href corresponder à página atual
+            if (linkPage === currentPage) {
+                link.classList.add('active-nav-link');
+            }
+        });
+    }
+
+
+    // --- LÓGICA EXISTENTE E FUNCIONAL PARA O BOTÃO SALVAR ---
     if (accountForm && saveButton) {
         accountForm.addEventListener('submit', (event) => {
             event.preventDefault(); // Impede o recarregamento da página

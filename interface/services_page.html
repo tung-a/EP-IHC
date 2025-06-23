@@ -10,6 +10,8 @@
     <title>PetPal - Services</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Links para os arquivos externos CSS e JS -->
     <link rel="stylesheet" href="css/custom.css">
     <style>.filter-dropdown { z-index: 10; }</style>
   </head>
@@ -61,7 +63,7 @@
                   <p class="filter-label text-[#101914] text-sm font-medium leading-normal" data-original-text="Service Type">Service Type</p>
                   <div class="text-[#101914]" data-icon="CaretDown" data-size="20px"><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></div>
                 </button>
-                <div id="type-dropdown" class="filter-dropdown hidden absolute top-10 left-0 bg-white border rounded-lg shadow-lg w-48">
+                <div id="type-dropdown" class="filter-dropdown absolute top-10 left-0 bg-white border border-gray-200 rounded-lg shadow-lg w-48">
                   <a href="#" class="filter-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-filter-type="type" data-filter-value="grooming">Grooming & Spa</a>
                   <a href="#" class="filter-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-filter-type="type" data-filter-value="training">Training</a>
                   <a href="#" class="filter-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-filter-type="type" data-filter-value="health">Health & Veterinary</a>
@@ -75,7 +77,7 @@
                   <p class="filter-label text-[#101914] text-sm font-medium leading-normal" data-original-text="Rating">Rating</p>
                   <div class="text-[#101914]" data-icon="CaretDown" data-size="20px"><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></div>
                 </button>
-                <div id="rating-dropdown" class="filter-dropdown hidden absolute top-10 left-0 bg-white border rounded-lg shadow-lg w-40">
+                <div id="rating-dropdown" class="filter-dropdown absolute top-10 left-0 bg-white border rounded-lg shadow-lg w-40">
                   <a href="#" class="filter-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-filter-type="rating" data-filter-value="4">4+ Stars</a>
                   <a href="#" class="filter-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-filter-type="rating" data-filter-value="3">3+ Stars</a>
                   <a href="#" class="filter-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-filter-type="rating" data-filter-value="2">2+ Stars</a>
@@ -85,7 +87,8 @@
               </div>
             </div>
             <div id="item-grid" class="grid grid-cols-[repeat(auto-fill,minmax(158px,1fr))] gap-3 p-4">
-              <div class="item-card flex flex-col gap-3 pb-3 cursor-pointer rounded-xl" data-type="grooming" data-rating="5" data-price="49.99" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAA1VTVc3yMbM3JYbn4KyGI3xPr2GksLMXT-hhG_6S4We1KunuYbe_e77q43rg4LyTNKgFiqQulVinKh7vrDBildRWA9DJvfIS6GUgD1ACd6R1E31V_To96rZDnP6oyJKIzMJfWqRATigkO4Jp6ZtOjqFwveRYj-n3W_dnh9CwIebReoZ_vC-WZgFOQGP_hjV9n3jxcnLBUpe8C5_cUuSPHSCdn5Fkim5ME4pbfSRCr_RbM_NOwfuebJbxlAR0RbzTBZb0qqGEskks" data-title="Professional Grooming" data-description="A full-service grooming session including bath, haircut, and nail trimming." data-subtext="Starting at $49.99" data-button-text="Book Now">
+              <!-- [NOVA] Classe 'featured-item-card' adicionada -->
+              <div class="item-card featured-item-card flex flex-col gap-3 pb-3 cursor-pointer rounded-xl" data-type="grooming" data-rating="5" data-price="49.99" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAA1VTVc3yMbM3JYbn4KyGI3xPr2GksLMXT-hhG_6S4We1KunuYbe_e77q43rg4LyTNKgFiqQulVinKh7vrDBildRWA9DJvfIS6GUgD1ACd6R1E31V_To96rZDnP6oyJKIzMJfWqRATigkO4Jp6ZtOjqFwveRYj-n3W_dnh9CwIebReoZ_vC-WZgFOQGP_hjV9n3jxcnLBUpe8C5_cUuSPHSCdn5Fkim5ME4pbfSRCr_RbM_NOwfuebJbxlAR0RbzTBZb0qqGEskks" data-title="Professional Grooming" data-description="A full-service grooming session including bath, haircut, and nail trimming." data-subtext="Starting at $49.99" data-button-text="Book Now">
                 <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAA1VTVc3yMbM3JYbn4KyGI3xPr2GksLMXT-hhG_6S4We1KunuYbe_e77q43rg4LyTNKgFiqQulVinKh7vrDBildRWA9DJvfIS6GUgD1ACd6R1E31V_To96rZDnP6oyJKIzMJfWqRATigkO4Jp6ZtOjqFwveRYj-n3W_dnh9CwIebReoZ_vC-WZgFOQGP_hjV9n3jxcnLBUpe8C5_cUuSPHSCdn5Fkim5ME4pbfSRCr_RbM_NOwfuebJbxlAR0RbzTBZb0qqGEskks");'></div>
                 <div><p class="text-[#101914] text-base font-medium leading-normal">Professional Grooming</p><p class="text-[#5a8c6e] text-sm font-normal leading-normal">Starting at $49.99</p></div>
               </div>
@@ -93,6 +96,7 @@
                 <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBXOqXqUY8fE1UvPyD0PYvBKRskoQpDUadapkvoz0GbXtjgRJ3SXLYSPu3KdK4pQS-Kyw-ClRGx3EVHO3kyIbE5ronu2Iy6L725msp52rRv0CVv2Lx94EwLO_j2pgTG0dZ5vbhphVC7C9BQ4x1umR1rbBXUrcfH2noPPaNKvN-FPzTpwiK5rPcZK-XjeXynEHOHUnwny1my9wRn_M4ubL8MgV0X5vhEd_un4rYL1QLqW5CHxRWFFytivRvV6XVjC7LreQXJOq1VbTQ");'></div>
                 <div><p class="text-[#101914] text-base font-medium leading-normal">Obedience Training</p><p class="text-[#5a8c6e] text-sm font-normal leading-normal">Starting at $79.99</p></div>
               </div>
+              <!-- Restante dos cards permanecem os mesmos... -->
               <div class="item-card flex flex-col gap-3 pb-3 cursor-pointer rounded-xl" data-type="health" data-rating="5" data-price="99.99" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDKlJIXl7tBJuc2Du08phFnuiu7o07BbwQfRTvNfgisr2ucczND4kfCW16J8Ga84cf1tgta2srzxuN7NYqbbSLwzqURAo9PH8Bv17Yd8e974mxODUHECzzfFFCEa5kzAJULndJ1Y6zaBLPC1qOMDgYFcLp7V2O3pTDPTgguefyf52UiR6wJ7hc1nZB8SMM5ktbkztOuGknFKvNRfeKmtkEjdmewChrcnqKr9zC6fQvrUr3tfqa_fwqIBNxTxgLR3xU2deXLmy6Edfs" data-title="Veterinary Checkup" data-description="A comprehensive health checkup with our professional veterinary staff." data-subtext="Starting at $99.99" data-button-text="Book Now">
                 <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKlJIXl7tBJuc2Du08phFnuiu7o07BbwQfRTvNfgisr2ucczND4kfCW16J8Ga84cf1tgta2srzxuN7NYqbbSLwzqURAo9PH8Bv17Yd8e974mxODUHECzzfFFCEa5kzAJULndJ1Y6zaBLPC1qOMDgYFcLp7V2O3pTDPTgguefyf52UiR6wJ7hc1nZB8SMM5ktbkztOuGknFKvNRfeKmtkEjdmewChrcnqKr9zC6fQvrUr3tfqa_fwqIBNxTxgLR3xU2deXLmy6Edfs");'></div>
                 <div><p class="text-[#101914] text-base font-medium leading-normal">Veterinary Checkup</p><p class="text-[#5a8c6e] text-sm font-normal leading-normal">Starting at $99.99</p></div>
@@ -227,7 +231,7 @@
         </div>
       </div>
     </div>
-
+    
     <script src="scripts/service-filter.js" defer></script>
     <script src="scripts/auth.js" defer></script>
     <script src="scripts/modal.js" defer></script>

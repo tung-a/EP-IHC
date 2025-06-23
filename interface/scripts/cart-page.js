@@ -5,36 +5,109 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartTotalElement = document.getElementById('cart-total');
     const emptyCartMessage = document.getElementById('empty-cart-message');
     const checkoutBtn = document.getElementById('checkout-btn');
-    const checkoutFeedback = document.getElementById('checkout-feedback');
 
+    /**
+     * Calcula e atualiza os totais no resumo do pedido com um efeito visual.
+     */
+    const updateTotals = () => {
+        const cart = JSON.parse(localStorage.getItem('petPalCart')) || [];
+        const subtotal = cart.reduce((sum, item) => sum + (parseFloat(item.price) * item.quantity), 0);
+        
+        if (cartSubtotalElement) cartSubtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+        if (cartTotalElement) cartTotalElement.textContent = `$${subtotal.toFixed(2)}`;
+
+        // Adiciona um "flash" visual para indicar que os totais foram atualizados
+        if (orderSummary) {
+            orderSummary.classList.remove('is-updating');
+            void orderSummary.offsetWidth; // Truque para reiniciar a animação CSS
+            orderSummary.classList.add('is-updating');
+        }
+
+        // Mostra ou esconde a secção do carrinho se estiver vazio
+        if (cart.length === 0) {
+            if (emptyCartMessage) emptyCartMessage.classList.remove('hidden');
+            if (cartItemsContainer) cartItemsContainer.classList.add('hidden');
+            if (orderSummary) orderSummary.classList.add('hidden');
+        }
+    };
+
+    /**
+     * Remove um item do carrinho com uma animação.
+     * @param {HTMLElement} buttonElement - O botão de remover que foi clicado.
+     */
+    const handleRemoveItem = (buttonElement) => {
+        const row = buttonElement.closest('.cart-item-row');
+        const title = buttonElement.dataset.title;
+
+        row.classList.add('removing');
+
+        setTimeout(() => {
+            let cart = JSON.parse(localStorage.getItem('petPalCart')) || [];
+            cart = cart.filter(item => item.title !== title);
+            localStorage.setItem('petPalCart', JSON.stringify(cart));
+            
+            if (window.updateCartIcon) window.updateCartIcon();
+            
+            row.remove();
+            updateTotals();
+        }, 400); // Deve corresponder à duração da animação no CSS
+    };
+
+    /**
+     * Altera a quantidade de um item.
+     * @param {HTMLElement} buttonElement - O botão de +/- que foi clicado.
+     * @param {number} change - 1 para aumentar, -1 para diminuir.
+     */
+    const handleQuantityChange = (buttonElement, change) => {
+        const row = buttonElement.closest('.cart-item-row');
+        const title = buttonElement.dataset.title;
+        let cart = JSON.parse(localStorage.getItem('petPalCart')) || [];
+        const item = cart.find(i => i.title === title);
+
+        if (!item) return;
+
+        item.quantity += change;
+
+        if (item.quantity <= 0) {
+            handleRemoveItem(buttonElement);
+            return;
+        }
+
+        localStorage.setItem('petPalCart', JSON.stringify(cart));
+        if (window.updateCartIcon) window.updateCartIcon();
+
+        // Atualiza o DOM diretamente em vez de re-renderizar tudo
+        const quantityEl = row.querySelector('.item-quantity');
+        const subtotalEl = row.querySelector('.item-subtotal');
+        if (quantityEl) quantityEl.textContent = item.quantity;
+        if (subtotalEl) subtotalEl.textContent = `$${(item.quantity * item.price).toFixed(2)}`;
+
+        updateTotals();
+    };
+
+    /**
+     * Renderiza o estado inicial do carrinho.
+     */
     const renderCart = () => {
         const cart = JSON.parse(localStorage.getItem('petPalCart')) || [];
 
         if (cart.length === 0) {
-            emptyCartMessage.classList.remove('hidden');
-            cartItemsContainer.classList.add('hidden');
-            if (orderSummary) {
-                orderSummary.classList.add('hidden');
-            }
+            if (emptyCartMessage) emptyCartMessage.classList.remove('hidden');
             return;
         }
 
-        emptyCartMessage.classList.add('hidden');
-        cartItemsContainer.classList.remove('hidden');
-        if (orderSummary) {
-            orderSummary.classList.remove('hidden');
-        }
+        if (emptyCartMessage) emptyCartMessage.classList.add('hidden');
+        if (cartItemsContainer) cartItemsContainer.classList.remove('hidden');
+        if (orderSummary) orderSummary.classList.remove('hidden');
+
         cartItemsContainer.innerHTML = '';
         
-        let subtotal = 0;
-
         cart.forEach(item => {
             const itemElement = document.createElement('div');
-            itemElement.className = 'flex items-center justify-between border-b py-4';
+            itemElement.className = 'cart-item-row flex items-center justify-between border-b py-4';
             
             const itemPrice = parseFloat(item.price) || 0;
             const itemSubtotal = itemPrice * item.quantity;
-            subtotal += itemSubtotal;
 
             itemElement.innerHTML = `
                 <div class="flex items-center gap-4">
@@ -47,91 +120,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="flex items-center gap-4">
                     <div class="flex items-center border rounded-md">
                         <button data-title="${item.title}" class="quantity-change-btn decrease-btn px-3 py-1 text-lg font-bold">-</button>
-                        <span class="px-3">${item.quantity}</span>
+                        <span class="item-quantity px-3">${item.quantity}</span>
                         <button data-title="${item.title}" class="quantity-change-btn increase-btn px-3 py-1 text-lg font-bold">+</button>
                     </div>
-                    <p class="font-bold w-20 text-right">$${itemSubtotal.toFixed(2)}</p>
+                    <p class="item-subtotal font-bold w-20 text-right">$${itemSubtotal.toFixed(2)}</p>
                     <button data-title="${item.title}" class="remove-item-btn text-red-500 hover:text-red-700 font-bold">X</button>
                 </div>
             `;
             cartItemsContainer.appendChild(itemElement);
         });
 
-        cartSubtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-        cartTotalElement.textContent = `$${subtotal.toFixed(2)}`;
-
-        addEventListeners();
-    };
-
-    const handleQuantityChange = (title, change) => {
-        let cart = JSON.parse(localStorage.getItem('petPalCart')) || [];
-        const item = cart.find(i => i.title === title);
-        
-        if (item) {
-            item.quantity += change;
-            if (item.quantity <= 0) {
-                handleRemoveItem(title);
-                return;
-            }
-        }
-
-        localStorage.setItem('petPalCart', JSON.stringify(cart));
-        renderCart();
-        if (window.updateCartIcon) window.updateCartIcon();
-    };
-
-    const handleRemoveItem = (title) => {
-        let cart = JSON.parse(localStorage.getItem('petPalCart')) || [];
-        cart = cart.filter(item => item.title !== title);
-        localStorage.setItem('petPalCart', JSON.stringify(cart));
-        renderCart();
-        if (window.updateCartIcon) window.updateCartIcon();
-    };
-
-    const addEventListeners = () => {
-        document.querySelectorAll('.quantity-change-btn').forEach(button => {
-            button.addEventListener('click', (event) => {
-                const title = event.target.dataset.title;
-                const change = event.target.classList.contains('increase-btn') ? 1 : -1;
-                handleQuantityChange(title, change);
-            });
-        });
-
-        document.querySelectorAll('.remove-item-btn').forEach(button => {
-            button.addEventListener('click', (event) => {
-                const title = event.target.dataset.title;
-                handleRemoveItem(title);
-            });
-        });
+        updateTotals();
     };
     
-    // --- LÓGICA DO CHECKOUT ---
+    // --- Delegação de Eventos para os botões do carrinho ---
+    if (cartItemsContainer) {
+        cartItemsContainer.addEventListener('click', (event) => {
+            const target = event.target;
+            if (target.matches('.quantity-change-btn')) {
+                const change = target.classList.contains('increase-btn') ? 1 : -1;
+                handleQuantityChange(target, change);
+            }
+            if (target.matches('.remove-item-btn')) {
+                handleRemoveItem(target);
+            }
+        });
+    }
+
+    // --- Lógica do Checkout (mantida) ---
     if(checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
             const cart = JSON.parse(localStorage.getItem('petPalCart')) || [];
-            checkoutFeedback.innerHTML = ''; // Limpa feedback anterior
+            if (cart.length === 0) return;
 
-            // Cenário de Fracasso
-            if (cart.length === 0) {
-                checkoutFeedback.innerHTML = `<p class="text-red-500 font-semibold">Seu carrinho está vazio!</p>`;
-                return;
-            }
-
-            // Cenário de Sucesso (Simulação)
-            // 1. Mostra estado de processamento
             checkoutBtn.disabled = true;
-            checkoutBtn.innerHTML = `
-                <div class="flex items-center justify-center">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Processando...
-                </div>`;
+            checkoutBtn.innerHTML = `<div class="flex items-center justify-center"><svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Processando...</div>`;
 
-            // 2. Simula o tempo de processamento (2 segundos)
             setTimeout(() => {
-                // Salva o pedido no histórico
                 const orderHistory = JSON.parse(localStorage.getItem('petPalOrderHistory')) || [];
                 const newOrder = {
                     id: Date.now(),
@@ -141,22 +166,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
                 orderHistory.unshift(newOrder);
                 localStorage.setItem('petPalOrderHistory', JSON.stringify(orderHistory));
-
-                // 3. Mostra feedback de sucesso
-                checkoutBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
-                checkoutBtn.classList.add('bg-blue-500');
-                checkoutBtn.innerHTML = `Compra Aprovada! ✅`;
-
-                // 4. Limpa o carrinho e atualiza o ícone
                 localStorage.removeItem('petPalCart');
                 if (window.updateCartIcon) window.updateCartIcon();
-
-                // 5. Redireciona para a página de sucesso após 1.5s
-                setTimeout(() => {
-                    window.location.href = 'checkout_success.html';
-                }, 1500);
-
-            }, 2000);
+                window.location.href = 'checkout_success.html';
+            }, 1500);
         });
     }
 

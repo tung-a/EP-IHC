@@ -13,34 +13,36 @@ document.addEventListener('DOMContentLoaded', () => {
     location: null,
   };
 
-  // --- Lógica para Abrir/Fechar Dropdowns ---
+  // --- [NOVA] Lógica para Abrir/Fechar Dropdowns com Animação ---
   filterButtons.forEach(button => {
     button.addEventListener('click', (event) => {
-      // Impede que o clique no botão feche o menu imediatamente
       event.stopPropagation();
       const dropdownId = button.getAttribute('data-dropdown');
       const dropdown = document.getElementById(dropdownId);
-      
-      // Fecha outros dropdowns abertos
-      document.querySelectorAll('.filter-dropdown').forEach(d => {
-        if (d.id !== dropdownId) {
-          d.classList.add('hidden');
-        }
+      const isActive = dropdown.classList.contains('is-active');
+
+      // Fecha todos os outros dropdowns abertos
+      document.querySelectorAll('.filter-dropdown.is-active').forEach(d => {
+        d.classList.remove('is-active');
       });
 
-      // Abre ou fecha o dropdown atual
-      dropdown.classList.toggle('hidden');
+      // Abre o dropdown atual se não estava ativo
+      if (!isActive) {
+        dropdown.classList.add('is-active');
+      }
     });
   });
 
-  // Fecha todos os dropdowns se o usuário clicar fora deles
-  window.addEventListener('click', () => {
-    document.querySelectorAll('.filter-dropdown').forEach(d => {
-      d.classList.add('hidden');
-    });
+  // Fecha todos os dropdowns se o utilizador clicar fora deles
+  window.addEventListener('click', (event) => {
+    if (!event.target.closest('.filter-btn') && !event.target.closest('.filter-dropdown')) {
+      document.querySelectorAll('.filter-dropdown.is-active').forEach(d => {
+        d.classList.remove('is-active');
+      });
+    }
   });
 
-  // --- Lógica de Filtro ---
+  // --- Lógica de Filtro (sem alterações) ---
   const applyFilters = () => {
     const searchQuery = searchInput ? searchInput.value.toLowerCase() : '';
 
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const ageMatch = !activeFilters.age || petData.age === activeFilters.age;
       const locationMatch = !activeFilters.location || petData.location.toLowerCase().includes(activeFilters.location.toLowerCase());
 
-      // O pet só é exibido se corresponder a TODOS os critérios
+      // O animal só é exibido se corresponder a TODOS os critérios
       if (searchMatch && speciesMatch && sizeMatch && ageMatch && locationMatch) {
         pet.style.display = '';
       } else {
@@ -73,15 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const filterType = option.getAttribute('data-filter-type');
       const filterValue = option.getAttribute('data-filter-value');
       
-      // Atualiza o estado do filtro
       activeFilters[filterType] = filterValue;
 
-      // Atualiza o texto do botão do filtro
       const button = document.querySelector(`[data-dropdown="${filterType}-dropdown"]`);
       const originalText = button.querySelector('p').getAttribute('data-original-text');
       button.querySelector('.filter-label').textContent = filterValue ? `${originalText}: ${option.textContent}` : originalText;
       
-      // Aplica os filtros
+      // [NOVO] Fecha o dropdown após a seleção
+      option.closest('.filter-dropdown').classList.remove('is-active');
+      
       applyFilters();
     });
   });
@@ -97,6 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const button = document.querySelector(`[data-dropdown="${filterType}-dropdown"]`);
       const originalText = button.querySelector('p').getAttribute('data-original-text');
       button.querySelector('.filter-label').textContent = originalText;
+
+      // [NOVO] Fecha o dropdown após a ação
+      clearButton.closest('.filter-dropdown').classList.remove('is-active');
 
       applyFilters();
     });

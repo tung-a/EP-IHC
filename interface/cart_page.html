@@ -47,10 +47,11 @@
             </div>
             
             <div id="cart-container" class="p-4 lg:flex lg:gap-8">
-                <div id="cart-items-container" class="lg:w-2/3">
-                    </div>
+                <!-- Os itens do carrinho serão renderizados aqui pelo JS -->
+                <div id="cart-items-container" class="lg:w-2/3"></div>
 
-                <div id="order-summary" class="lg:w-1/3 mt-8 lg:mt-0 p-6 bg-white rounded-lg shadow-md h-fit">
+                <!-- Oculto por defeito, JS irá mostrar se houver itens -->
+                <div id="order-summary" class="hidden lg:w-1/3 mt-8 lg:mt-0 p-6 bg-white rounded-lg shadow-md h-fit">
                     <h2 class="text-xl font-bold border-b pb-4">Resumo do Pedido</h2>
                     <div class="flex justify-between mt-4">
                         <p class="text-gray-600">Subtotal</p>
@@ -68,12 +69,12 @@
                     <button id="checkout-btn" class="mt-6 w-full py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-all">
                         Finalizar Compra
                     </button>
-                    <div id="checkout-feedback" class="text-center text-sm mt-2"></div>
                 </div>
             </div>
 
+            <!-- Oculto por defeito, JS irá mostrar se o carrinho estiver vazio -->
             <div id="empty-cart-message" class="hidden text-center p-10">
-                <p class="text-gray-600 text-lg">Seu carrinho de compras está vazio.</p>
+                <p class="text-gray-600 text-lg">O seu carrinho de compras está vazio.</p>
                 <a href="products_page.html" class="mt-4 inline-block px-6 py-2 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600">Ver Produtos</a>
             </div>
 
